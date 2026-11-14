@@ -1,0 +1,70 @@
+:root{--bg:#fff;--ink:#1b2733;--muted:#5a6773;--line:#e1e6eb;--accent:#1b5e8c;--tint:#f3f6f9;--side:#0e2236;--side-ink:#e9eef4;--side-muted:#9fb1c3;--gold:#d6a94a;
+--serif:"Newsreader",Georgia,serif;--sans:"Inter",system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+@media(prefers-color-scheme:dark){:root{--bg:#10161c;--ink:#e8ecf0;--muted:#97a4b0;--line:#26303a;--accent:#7fb7e6;--tint:#161e26;--side:#0a1520}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.7 var(--serif);display:flex;min-height:100vh;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-underline-offset:3px;text-decoration-thickness:1px}a:hover{text-decoration-thickness:2px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.sidebar{width:300px;flex:none;position:sticky;top:0;height:100vh;overflow-y:auto;background:var(--side);color:var(--side-ink);padding:2.5rem 1.75rem 2rem;font:15px/1.5 var(--sans)}
+.sidebar h1{font:600 1.7rem/1.15 var(--serif);margin:0 0 .5rem;color:#fff;letter-spacing:-.01em}
+.sidebar .role{color:var(--side-muted);margin:0 0 1.75rem;padding-bottom:1.25rem;border-bottom:1px solid rgba(255,255,255,.14);font-size:.9rem}
+.sidebar nav ul{list-style:none;margin:0 0 1.75rem;padding:0}
+.sidebar nav a{display:block;padding:.5rem .75rem;margin-bottom:2px;color:var(--side-muted);text-decoration:none;border-left:3px solid transparent;border-radius:0 4px 4px 0;transition:background .15s,color .15s}
+.sidebar nav a:hover{background:rgba(255,255,255,.07);color:#fff}
+.sidebar nav a[aria-current=page]{background:rgba(255,255,255,.1);color:#fff;font-weight:600;border-left-color:var(--gold)}
+.cbox{border-top:1px solid rgba(255,255,255,.14);padding:1.1rem 0;margin-bottom:.4rem;overflow-wrap:anywhere;color:var(--side-muted);font-size:.9rem}
+.cbox p{margin:.25rem 0}.cbox a{color:var(--side-ink);text-decoration:none}.cbox a:hover{text-decoration:underline}
+.btn{display:block;text-align:center;background:var(--gold);color:#1a1405!important;padding:.7rem;text-decoration:none;font-weight:600;border-radius:4px}
+.btn:hover{filter:brightness(1.08)}
+.menu-btn{display:none}
+main{flex:1;max-width:940px;padding:4rem 4.5rem}
+main h2{font-size:2.3rem;line-height:1.2;font-weight:600;letter-spacing:-.015em;margin:0 0 2rem}
+main h2::after{content:"";display:block;width:56px;height:3px;background:var(--gold);margin-top:.8rem}
+main h3{font-size:1.2rem;line-height:1.35;margin:2.4rem 0 .4rem}
+main h2+h3{margin-top:0}
+.meta{color:var(--muted);font:.9rem/1.5 var(--sans);margin:0 0 .5rem}
+.profile{float:right;width:230px;max-width:42%;margin:.3rem 0 1.2rem 2.2rem;box-shadow:10px 10px 0 var(--line);border-radius:4px;overflow:hidden}
+.profile img{display:block;width:100%;height:auto}
+main ul,main ol{padding-left:1.3rem}main li{margin-bottom:.7rem}main li::marker{color:var(--gold)}
+.entry{position:relative;border-left:2px solid var(--line);padding:0 0 1.2rem 1.6rem;margin:0 0 .4rem 6px}
+.entry::before{content:"";position:absolute;left:-7px;top:.45rem;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+.entry.current::before{background:var(--gold);border-color:var(--gold)}
+.entry h3{margin:0 0 .1rem}
+.badge{display:inline-block;margin-left:.5rem;padding:.1rem .55rem;font:600 .72rem var(--sans);background:var(--gold);color:#1a1405;border-radius:99px;vertical-align:middle}
+.ref{font:.9rem/1.55 var(--sans);color:var(--muted);background:var(--tint);padding:.6rem .8rem;border-radius:4px}
+table{border-collapse:collapse;width:100%;font:.98rem/1.55 var(--sans)}
+td{padding:.7rem .8rem;border-bottom:1px solid var(--line);vertical-align:top}
+tr:nth-child(odd) td{background:var(--tint)}td:first-child{color:var(--muted);width:12rem;font-weight:500}
+footer{margin-top:4rem;padding-top:1.2rem;border-top:1px solid var(--line);color:var(--muted);font:.85rem var(--sans)}
+@media(max-width:900px){
+body{display:block}
+.sidebar{position:static;width:100%;height:auto;padding:1.2rem 1.1rem}
+.sidebar .role{margin-bottom:1rem;padding-bottom:1rem}
+.menu-btn{display:block;width:100%;margin:0 0 .9rem;padding:.6rem;font:600 1rem var(--sans);background:transparent;color:#fff;border:1px solid rgba(255,255,255,.35);border-radius:4px;cursor:pointer}
+.collapsible{display:none}.collapsible.open{display:block}
+main{padding:2rem 1.2rem}main h2{font-size:1.9rem}
+.profile{float:none;width:200px;margin:0 0 1.8rem}
+td:first-child{width:auto;display:block;padding-bottom:0}td{display:block;border:0}}
+
+/* Colour and highlighting */
+:root{--hl:#fff0bd;--hl-ink:#5c4000;--teal:#127a78}
+@media(prefers-color-scheme:dark){:root{--hl:#3b3112;--hl-ink:#f5db8c;--teal:#5fc7c3}}
+main h2{color:var(--accent)}
+main h2::after{width:72px;height:4px;background:linear-gradient(90deg,var(--gold),var(--teal));border-radius:2px}
+main h3{color:var(--accent);border-left:4px solid var(--gold);padding-left:.7rem}
+.entry h3{border:0;padding:0}
+.entry:nth-of-type(even)::before{border-color:var(--teal)}
+mark.me{background:var(--hl);color:var(--hl-ink);padding:.05em .35em;border-radius:3px;font-weight:600;box-shadow:inset 0 -2px 0 var(--gold)}
+.hl{background:linear-gradient(transparent 55%,var(--hl) 55%);font-weight:600}
+.callout{background:var(--tint);border-left:5px solid var(--teal);padding:1rem 1.3rem;border-radius:0 6px 6px 0;margin:1.2rem 0}
+.callout::before{content:"Now";display:block;font:600 .75rem var(--sans);color:var(--teal);margin-bottom:.2rem}
+li.featured{background:var(--tint);border-left:4px solid var(--gold);padding:.7rem 1rem;border-radius:0 6px 6px 0;list-style:none;margin-left:-1.3rem}
+tr.star td{background:var(--hl)!important;color:var(--hl-ink);font-weight:600}
+tr.star td:first-child{color:var(--hl-ink)}
+main li::marker{color:var(--teal)}
+.callout::before{content:attr(data-label)}
+.lead{font-size:1.28rem;line-height:1.6}
+.cta{display:flex;flex-wrap:wrap;gap:.7rem;margin:1.4rem 0 .5rem;clear:both}
+.cta a{font:600 .95rem var(--sans);padding:.65rem 1.1rem;border-radius:4px;text-decoration:none;border:2px solid var(--accent);color:var(--accent)}
+.cta a:first-child{background:var(--accent);color:var(--bg)}
+.cta a:hover{filter:brightness(1.12)}
